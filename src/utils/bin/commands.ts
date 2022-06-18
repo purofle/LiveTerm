@@ -3,6 +3,7 @@
 import * as bin from './index';
 import config from '../../../config.json';
 import { list as listHistory } from '../history';
+import { showPacman } from './pacman';
 
 function urla(herf: String, text: String): String {
   return `<u><a class="text-light-blue dark:text-dark-blue underline" href="${herf}" target="_blank">${text}</a></u>`
@@ -165,6 +166,10 @@ export const url = async (args?: string[]): Promise<String> => {
 export const history = async (args: string[]): Promise<string> => {
 	return listHistory();
 };
+
+export const pacman = async (args: string[]): Promise<string> => {
+	return showPacman(args);
+}
 
 
 // Banner
