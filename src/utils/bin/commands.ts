@@ -2,7 +2,7 @@
 
 import * as bin from './index';
 import config from '../../../config.json';
-import { list as listHistory } from '../shell';
+import { list as listHistory } from '../history';
 
 function urla(herf: String, text: String): String {
   return `<u><a class="text-light-blue dark:text-dark-blue underline" href="${herf}" target="_blank">${text}</a></u>`
