@@ -1,23 +1,23 @@
 // List of commands that do not require API calls
 
-import * as bin from './index';
-import config from '../../../config.json';
-import { list as listHistory } from '../history';
-import { showPacman } from './pacman';
+import * as bin from './index'
+import config from '../../../config.json'
+import { list as listHistory } from '../history'
+import { showPacman } from './pacman'
 
 function urla(herf: String, text: String): String {
-  return `<u><a class="text-light-blue dark:text-dark-blue underline" href="${herf}" target="_blank">${text}</a></u>`
+  return `<u><a class='text-light-blue dark:text-dark-blue underline' href='${herf}' target='_blank'>${text}</a></u>`
 }
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
-  const commands = Object.keys(bin).sort().join(', ');
-  var c = '';
+  const commands = Object.keys(bin).sort().join(', ')
+  var c = ''
   for (let i = 1; i <= Object.keys(bin).sort().length; i++) {
     if (i % 7 === 0) {
-      c += Object.keys(bin).sort()[i - 1] + '\n';
+      c += Object.keys(bin).sort()[i - 1] + '\n'
     } else {
-      c += Object.keys(bin).sort()[i - 1] + ' ';
+      c += Object.keys(bin).sort()[i - 1] + ' '
     }
   }
   return `Welcome! Here are all the available commands:
@@ -25,34 +25,34 @@ export const help = async (args: string[]): Promise<string> => {
 [tab]: trigger completion.
 [ctrl+l]/clear: clear terminal.\n
 Type 'neofetch' to display summary.
-`;
-};
+`
+}
 
 // Redirection
 export const repo = async (args: string[]): Promise<string> => {
-  window.open(`${config.repo}`);
-  return 'Opening Github repository...';
-};
+  window.open(`${config.repo}`)
+  return 'Opening Github repository...'
+}
 
 // About
 export const about = async (args: string[]): Promise<string> => {
-  return `Hi, I am ${config.name}. 
+  return `Hi, I am ${config.name}.
 Welcome to my website!
 More about me:
 'neofetch' - short summary.
 'resume' - my latest resume.
-'readme' - my github readme.`;
-};
+'readme' - my github readme.`
+}
 
 export const resume = async (args: string[]): Promise<string> => {
-  window.open(`${config.resume_url}`);
-  return 'Opening resume...';
-};
+  window.open(`${config.resume_url}`)
+  return 'Opening resume...'
+}
 
 // Donate
 /*
 export const donate = async (args: string[]): Promise<string> => {
-  return `thank you for your interest. 
+  return `thank you for your interest.
 here are the ways you can support my work:
 - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
 - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
@@ -62,16 +62,15 @@ here are the ways you can support my work:
 
 // Contact
 export const email = async (args: string[]): Promise<string> => {
-  window.open(`mailto:${config.email}`);
-  return `Opening mailto:${config.email}...`;
-};
+  window.open(`mailto:${config.email}`)
+  return `Opening mailto:${config.email}...`
+}
 
 export const github = async (args: string[]): Promise<string> => {
-  window.open(`https://github.com/${config.social.github}/`);
+  window.open(`https://github.com/${config.social.github}/`)
 
-  return 'Opening github...';
-};
-
+  return 'Opening github...'
+}
 
 /*
 export const linkedin = async (args: string[]): Promise<string> => {
@@ -83,111 +82,110 @@ export const linkedin = async (args: string[]): Promise<string> => {
 
 // Search
 export const google = async (args: string[]): Promise<string> => {
-  window.open(`https://google.com/search?q=${args.join(' ')}`);
-  return `Searching google for ${args.join(' ')}...`;
-};
+  window.open(`https://google.com/search?q=${args.join(' ')}`)
+  return `Searching google for ${args.join(' ')}...`
+}
 
 export const duckduckgo = async (args: string[]): Promise<string> => {
-  window.open(`https://duckduckgo.com/?q=${args.join(' ')}`);
-  return `Searching duckduckgo for ${args.join(' ')}...`;
-};
+  window.open(`https://duckduckgo.com/?q=${args.join(' ')}`)
+  return `Searching duckduckgo for ${args.join(' ')}...`
+}
 
 export const bing = async (args: string[]): Promise<string> => {
-  window.open(`https://bing.com/search?q=${args.join(' ')}`);
-  return `Wow, really? You are using bing for ${args.join(' ')}?`;
-};
+  window.open(`https://bing.com/search?q=${args.join(' ')}`)
+  return `Wow, really? You are using bing for ${args.join(' ')}?`
+}
 
 export const reddit = async (args: string[]): Promise<string> => {
-  window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`);
-  return `Searching reddit for ${args.join(' ')}...`;
-};
+  window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`)
+  return `Searching reddit for ${args.join(' ')}...`
+}
 
 // Typical linux commands
 export const echo = async (args: string[]): Promise<string> => {
-  return args.join(' ');
-};
+  return args.join(' ')
+}
 
 export const whoami = async (args: string[]): Promise<string> => {
-  return `${config.ps1_username}`;
-};
+  return `${config.ps1_username}`
+}
 
 export const ls = async (args: string[]): Promise<string> => {
   return `bin
 usr
 etc
 lib
-tmp`;
-};
+tmp`
+}
 
 export const cd = async (args: string[]): Promise<string> => {
   return `unfortunately, i cannot afford more directories.
-if you want to help, you can type 'donate'.`;
-};
+if you want to help, you can type 'donate'.`
+}
 
 export const date = async (args: string[]): Promise<string> => {
-  return new Date().toString();
-};
+  return new Date().toString()
+}
 
 export const vi = async (args: string[]): Promise<string> => {
-  return `woah, you still use 'vi'? just try 'vim'.`;
-};
+  return `woah, you still use 'vi'? just try 'vim'.`
+}
 
 export const vim = async (args: string[]): Promise<string> => {
-  return `'vim' is so outdated. how about 'nvim'?`;
-};
+  return `'vim' is so outdated. how about 'nvim'?`
+}
 
 export const nvim = async (args: string[]): Promise<string> => {
-  return `'nvim'? too fancy. why not 'emacs'?`;
-};
+  return `'nvim'? too fancy. why not 'emacs'?`
+}
 
 export const emacs = async (args?: string[]): Promise<string> => {
-  return `you know what? just use vscode.`;
-};
+  return `you know what? just use vscode.`
+}
 
 export const vscode = async (args?: string[]): Promise<string> => {
-  return `use sudo retry?`;
-};
-
+  return `use sudo retry?`
+}
 
 export const code = async (args?: string[]): Promise<string> => {
-  return `use sudo retry?`;
-};
-
+  return `use sudo retry?`
+}
 
 export const sudo = async (args?: string[]): Promise<string> => {
-  window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
-  return `Permission denied: with little power comes... no responsibility? `;
-};
+  window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank') // ...I'm sorry
+  return `Permission denied: with little power comes... no responsibility? `
+}
 
 export const url = async (args?: string[]): Promise<String> => {
-  return `Alist: ${urla("https://alist.archlinux.tech", "alist.archlinux.tech")}\nMy blog: ${urla("https://blog.archlinux.tech", "blog.archlinux.tech")}`;
+  return `Alist: ${urla(
+    'https://alist.archlinux.tech',
+    'alist.archlinux.tech',
+  )}\nMy blog: ${urla('https://blog.archlinux.tech', 'blog.archlinux.tech')}`
 }
 
 export const history = async (args: string[]): Promise<string> => {
-	return listHistory();
-};
-
-export const pacman = async (args: string[]): Promise<string> => {
-	return showPacman(args);
+  return listHistory()
 }
 
+export const pacman = async (args: string[]): Promise<string> => {
+  return showPacman(args)
+}
 
 // Banner
 export const banner = (args?: string[]): string => {
   return `
-█████        ███                       ███████████                                   
-░░███        ░░░                       ░█░░░███░░░█                                   
- ░███        ████  █████ █████  ██████ ░   ░███  ░   ██████  ████████  █████████████  
- ░███       ░░███ ░░███ ░░███  ███░░███    ░███     ███░░███░░███░░███░░███░░███░░███ 
- ░███        ░███  ░███  ░███ ░███████     ░███    ░███████  ░███ ░░░  ░███ ░███ ░███ 
- ░███      █ ░███  ░░███ ███  ░███░░░      ░███    ░███░░░   ░███      ░███ ░███ ░███ 
+█████        ███                       ███████████
+░░███        ░░░                       ░█░░░███░░░█
+ ░███        ████  █████ █████  ██████ ░   ░███  ░   ██████  ████████  █████████████
+ ░███       ░░███ ░░███ ░░███  ███░░███    ░███     ███░░███░░███░░███░░███░░███░░███
+ ░███        ░███  ░███  ░███ ░███████     ░███    ░███████  ░███ ░░░  ░███ ░███ ░███
+ ░███      █ ░███  ░░███ ███  ░███░░░      ░███    ░███░░░   ░███      ░███ ░███ ░███
  ███████████ █████  ░░█████   ░░██████     █████   ░░██████  █████     █████░███ █████
-░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░ 
+░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░
 
 Type 'help' to see the list of available commands.
 Type 'neofetch' to display summary.
-Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
+Type 'repo' or click <u><a class='text-light-blue dark:text-dark-blue underline' href='${config.repo}' target='_blank'>here</a></u> for the Github repository.
 Type 'url' to see how do I use this domain.
-`;
-};
-
+`
+}

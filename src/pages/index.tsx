@@ -1,17 +1,17 @@
-import Head from 'next/head';
-import React from 'react';
-import config from '../../config.json';
-import { Input } from '../components/input';
-import { useHistory } from '../components/history/hook';
-import { History } from '../components/history/History';
-import { banner } from '../utils/bin';
+import Head from 'next/head'
+import React from 'react'
+import config from '../../config.json'
+import { Input } from '../components/input'
+import { useHistory } from '../components/history/hook'
+import { History } from '../components/history/History'
+import { banner } from '../utils/bin'
 
 interface IndexPageProps {
-  inputRef: React.MutableRefObject<HTMLInputElement>;
+  inputRef: React.MutableRefObject<HTMLInputElement>
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
-  const containerRef = React.useRef(null);
+  const containerRef = React.useRef(null)
   const {
     history,
     command,
@@ -20,20 +20,20 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
     setHistory,
     clearHistory,
     setLastCommandIndex,
-  } = useHistory([]);
+  } = useHistory([])
 
-  const init = React.useCallback(() => setHistory(banner()), []);
+  const init = React.useCallback(() => setHistory(banner()), [])
 
   React.useEffect(() => {
-    init();
-  }, [init]);
+    init()
+  }, [init])
 
   React.useEffect(() => {
     if (inputRef.current) {
-      inputRef.current.scrollIntoView();
-      inputRef.current.focus({ preventScroll: true });
+      inputRef.current.scrollIntoView()
+      inputRef.current.focus({ preventScroll: true })
     }
-  }, [history]);
+  }, [history])
 
   return (
     <>
@@ -59,7 +59,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ inputRef }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage

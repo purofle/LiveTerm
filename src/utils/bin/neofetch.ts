@@ -1,19 +1,19 @@
-import config from '../../../config.json';
+import config from '../../../config.json'
 
 const neofetch = async (args: string[]): Promise<string> => {
   if (config.ascii === 'cveinnt') {
-    return `                                                  
+    return `
              @@@@@@@@@@@@@                   sumfetch: summary display
         @@@@               @@@@             -----------
       @@                       @@            ABOUT
     @@                           @@          ${config.name}
   @@                               @@       ﰩ ${config.ps1_hostname}
- @@                         @@@     @@       <u><a href="${config.resume_url}" target="_blank">resume</a></u>
-@@        @@@                        @@     爵 <u><a href="${config.repo}" target="_blank">Github repo</a></u>
+ @@                         @@@     @@       <u><a href='${config.resume_url}' target='_blank'>resume</a></u>
+@@        @@@                        @@     爵 <u><a href='${config.repo}' target='_blank'>Github repo</a></u>
 @@                                   @@     -----------
-@@             .@@@@@@@@@@.          @@      CONTACT 
- @@           @@          @@        @@       <u><a href="mailto:${config.email}" target="_blank">${config.email}</a></u>
-  @@           @@        @@        @@        <u><a href="https://github.com/${config.social.github}" target="_blank">github.com/${config.social.github}</a></u>`;
+@@             .@@@@@@@@@@.          @@      CONTACT
+ @@           @@          @@        @@       <u><a href='mailto:${config.email}' target='_blank'>${config.email}</a></u>
+  @@           @@        @@        @@        <u><a href='https://github.com/${config.social.github}' target='_blank'>github.com/${config.social.github}</a></u>`
   } else {
     return `
            ▄▓▓▓▓▓▓▓▓▓▓▓▓▓▓▄                  sumfetch
@@ -21,17 +21,17 @@ const neofetch = async (args: string[]): Promise<string> => {
       ▓▓▀  ▄▓▀   ▐▓▓  ▀▓▓    ▓▓▄             ABOUT
     ▄▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓            ${config.name}
    ▓▓     ▓▓▓    ▐▓▓    ▐▓▓     ▓▓
-▐▓▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▓       爵 <u><a href="${config.repo}" target="_blank">Github repo</a></u>
+▐▓▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▓       爵 <u><a href='${config.repo}' target='_blank'>Github repo</a></u>
 ▐▓                                 ▐▓       -----------
-▐▓       > A R C H L I N U X       ▐▓        CONTACT 
-▐▓                                 ▐▓        <u><a href="mailto:${config.email}" target="_blank">${config.email}</a></u>
-▐▓▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▓        <u><a href="https://github.com/${config.social.github}" target="_blank">github.com/${config.social.github}</a></u>
+▐▓       > A R C H L I N U X       ▐▓        CONTACT
+▐▓                                 ▐▓        <u><a href='mailto:${config.email}' target='_blank'>${config.email}</a></u>
+▐▓▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▓        <u><a href='https://github.com/${config.social.github}' target='_blank'>github.com/${config.social.github}</a></u>
    ▓▓      ▐▓▓    ▓▓    ▐▓▓     ▓▓
     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓           -----------
       ▓▓▓   ▐▓▓   ▓▓   ▓▓▓   ▓▓▀
         ▀▓▓▄▄ ▀▓▓▄▓▓▄▓▓▓▄▄▓▓▀
-            ▀▓▓▓▓▓▓▓▓▓▓▓▀`;
+            ▀▓▓▓▓▓▓▓▓▓▓▓▀`
   }
-};
+}
 
-export default neofetch;
+export default neofetch

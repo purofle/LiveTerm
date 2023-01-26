@@ -1,5 +1,5 @@
-import React from 'react';
-import config from '../../config.json';
+import React from 'react'
+import config from '../../config.json'
 
 export const Ps1 = () => {
   return (
@@ -13,7 +13,7 @@ export const Ps1 = () => {
       </span>
       <span className="text-light-gray dark:text-dark-gray">:$ ~ </span>
     </div>
-  );
-};
+  )
+}
 
-export default Ps1;
+export default Ps1

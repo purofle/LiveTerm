@@ -1,6 +1,6 @@
-import React from 'react';
-import { History as HistoryInterface } from './interface';
-import { Ps1 } from '../Ps1';
+import React from 'react'
+import { History as HistoryInterface } from './interface'
+import { Ps1 } from '../Ps1'
 
 export const History: React.FC<{ history: Array<HistoryInterface> }> = ({
   history,
@@ -25,7 +25,7 @@ export const History: React.FC<{ history: Array<HistoryInterface> }> = ({
         </div>
       ))}
     </>
-  );
-};
+  )
+}
 
-export default History;
+export default History
