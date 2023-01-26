@@ -1,4 +1,5 @@
 import * as bin from './bin';
+import React from 'react';
 
 export const handleTabCompletion = (
   command: string,
