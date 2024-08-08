@@ -1,4 +1,4 @@
-const { colors } = require('./config.json');
+const { colors } = require('./config.json')
 
 module.exports = {
   content: [
@@ -18,4 +18,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-};
+}

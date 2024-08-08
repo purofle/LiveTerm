@@ -12,7 +12,7 @@ function urla(herf: String, text: String): String {
 // Help
 export const help = async (args: string[]): Promise<string> => {
   const commands = Object.keys(bin).sort().join(', ')
-  var c = ''
+  let c = ''
   for (let i = 1; i <= Object.keys(bin).sort().length; i++) {
     if (i % 7 === 0) {
       c += Object.keys(bin).sort()[i - 1] + '\n'
@@ -174,14 +174,13 @@ export const pacman = async (args: string[]): Promise<string> => {
 // Banner
 export const banner = (args?: string[]): string => {
   return `
-█████        ███                       ███████████
-░░███        ░░░                       ░█░░░███░░░█
- ░███        ████  █████ █████  ██████ ░   ░███  ░   ██████  ████████  █████████████
- ░███       ░░███ ░░███ ░░███  ███░░███    ░███     ███░░███░░███░░███░░███░░███░░███
- ░███        ░███  ░███  ░███ ░███████     ░███    ░███████  ░███ ░░░  ░███ ░███ ░███
- ░███      █ ░███  ░░███ ███  ░███░░░      ░███    ░███░░░   ░███      ░███ ░███ ░███
- ███████████ █████  ░░█████   ░░██████     █████   ░░██████  █████     █████░███ █████
-░░░░░░░░░░░ ░░░░░    ░░░░░     ░░░░░░     ░░░░░     ░░░░░░  ░░░░░     ░░░░░ ░░░ ░░░░░
+    _             _       _     _                  
+   / \\   _ __ ___| |__   | |   (_)_ __  _   ___  __
+  / _ \\ | '__/ __| '_ \\  | |   | | '_ \\| | | \\ \\/ /
+ / ___ \\| | | (__| | | | | |___| | | | | |_| |>  < 
+/_/   \\_\\_|  \\___|_| |_| |_____|_|_| |_|\\__,_/_/\\_\\
+                                                   
+
 
 Type 'help' to see the list of available commands.
 Type 'neofetch' to display summary.

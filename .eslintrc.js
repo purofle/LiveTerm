@@ -6,4 +6,4 @@ module.exports = {
     'prettier/prettier': 'warn',
     'react-hooks/exhaustive-deps': 'off',
   },
-};
+}
