@@ -25,7 +25,7 @@ export function push(command: string): History {
 }
 
 export function getCommandIfHistoryExpansion(input): string {
-  let command = undefined
+  let command = ''
   const regExpExecArray = /!(-?)(?:(\d+)|!)/.exec(input)
   if (regExpExecArray) {
     const isMinus = Boolean(regExpExecArray[1]) && regExpExecArray[1].length > 0
