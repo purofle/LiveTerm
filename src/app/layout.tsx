@@ -1,12 +1,7 @@
 import { Metadata, Viewport } from 'next'
 import React from 'react'
 import config from '../../config.json'
-
-export const viewport: Viewport = {
-  initialScale: 1.0,
-  width: 'device-width',
-  maximumScale: 1.0,
-}
+import '../styles/global.css'
 
 export const metadata: Metadata = {
   title: config.title,

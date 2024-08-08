@@ -26,4 +26,6 @@ use 'pacman {-h --help}' with an operation for available options`
       return 'error: no targets specified (use -h for help)'
     }
   }
+
+  return ''
 }

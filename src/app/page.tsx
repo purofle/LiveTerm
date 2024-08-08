@@ -5,7 +5,6 @@ import Input from '../components/input'
 import { useHistory } from '../components/history/hook'
 import { banner } from '../utils/bin'
 import { History } from '../components/history/History'
-import '../styles/global.css'
 
 export default function Page() {
   const inputRef = useRef<HTMLInputElement>(null)
